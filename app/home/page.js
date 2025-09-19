@@ -97,6 +97,56 @@ const dailyWords = [
   { word: "fluctuate", options: ["dao động", "ổn định", "cố định", "giữ nguyên"], answer: "dao động" },
   { word: "formulate", options: ["xây dựng (kế hoạch)", "hủy bỏ", "phá hoại", "giấu đi"], answer: "xây dựng (kế hoạch)" },
   { word: "framework", options: ["khung (cấu trúc)", "nội dung", "chất liệu", "chi tiết"], answer: "khung (cấu trúc)" }
+  { word: "paradigm", options: ["mô hình", "nguyên tắc", "mục tiêu", "thói quen"], answer: "mô hình" },
+  { word: "infrastructure", options: ["cơ sở hạ tầng", "tài nguyên", "vật liệu", "chi phí"], answer: "cơ sở hạ tầng" },
+  { word: "viability", options: ["tính khả thi", "tính hợp pháp", "tính thẩm mỹ", "tính độc đáo"], answer: "tính khả thi" },
+  { word: "sustainability", options: ["tính bền vững", "tính linh hoạt", "tính an toàn", "tính hiệu quả"], answer: "tính bền vững" },
+  { word: "autonomy", options: ["quyền tự chủ", "quyền kiểm soát", "quyền sở hữu", "quyền lợi"], answer: "quyền tự chủ" },
+  { word: "resilience", options: ["sức bật, khả năng phục hồi", "sự kiên nhẫn", "sức mạnh", "sự bền bỉ"], answer: "sức bật, khả năng phục hồi" },
+  { word: "connotation", options: ["hàm ý", "ngữ pháp", "nghĩa gốc", "cách phát âm"], answer: "hàm ý" },
+  { word: "implication", options: ["hàm ý", "kết luận", "bằng chứng", "giả định"], answer: "hàm ý" },
+  { word: "coherence", options: ["tính mạch lạc", "tính sáng tạo", "tính phổ biến", "tính chính xác"], answer: "tính mạch lạc" },
+  { word: "discrepancy", options: ["sự khác biệt", "sự trùng lặp", "sự tương đồng", "sự lựa chọn"], answer: "sự khác biệt" },
+  { word: "feasibility", options: ["tính khả thi", "tính hợp lệ", "tính dễ hiểu", "tính phổ biến"], answer: "tính khả thi" },
+  { word: "magnitude", options: ["độ lớn, tầm quan trọng", "chi tiết", "khoảng cách", "kích thước nhỏ"], answer: "độ lớn, tầm quan trọng" },
+  { word: "precedent", options: ["tiền lệ", "hệ quả", "bằng chứng", "nguyên tắc"], answer: "tiền lệ" },
+  { word: "repercussion", options: ["hệ quả", "nguyên nhân", "quy trình", "tác nhân"], answer: "hệ quả" },
+  { word: "violation", options: ["sự vi phạm", "sự chấp thuận", "sự cho phép", "sự phát triển"], answer: "sự vi phạm" },
+  { word: "conformity", options: ["sự tuân thủ", "sự phản đối", "sự khác biệt", "sự biến đổi"], answer: "sự tuân thủ" },
+  { word: "exploitation", options: ["sự khai thác", "sự bỏ qua", "sự đầu tư", "sự nghiên cứu"], answer: "sự khai thác" },
+  { word: "innovation", options: ["sự đổi mới", "sự kế thừa", "sự kết thúc", "sự bảo tồn"], answer: "sự đổi mới" },
+  { word: "orientation", options: ["định hướng", "tập huấn", "địa hình", "cấu trúc"], answer: "định hướng" },
+  { word: "diversity", options: ["sự đa dạng", "sự khan hiếm", "sự tương đồng", "sự thống nhất"], answer: "sự đa dạng" },
+  { word: "alignment", options: ["sự sắp xếp thẳng hàng", "sự đối đầu", "sự cân bằng", "sự thay thế"], answer: "sự sắp xếp thẳng hàng" },
+  { word: "articulation", options: ["sự diễn đạt rõ ràng", "sự học hỏi", "sự sao chép", "sự kiểm soát"], answer: "sự diễn đạt rõ ràng" },
+  { word: "compliance", options: ["sự tuân thủ", "sự hợp tác", "sự đồng tình", "sự từ chối"], answer: "sự tuân thủ" },
+  { word: "integrity", options: ["sự chính trực", "sự kết nối", "sự công bằng", "sự bảo mật"], answer: "sự chính trực" },
+  { word: "credibility", options: ["độ tin cậy", "độ bền", "tính khả thi", "tính minh bạch"], answer: "độ tin cậy" },
+  { word: "validity", options: ["tính hợp lệ", "tính sáng tạo", "tính phổ biến", "tính khách quan"], answer: "tính hợp lệ" },
+  { word: "vulnerability", options: ["sự dễ tổn thương", "sự mạnh mẽ", "sự chủ động", "sự kiên nhẫn"], answer: "sự dễ tổn thương" },
+  { word: "accountability", options: ["trách nhiệm giải trình", "quyền lợi", "khả năng thích ứng", "mục tiêu"], answer: "trách nhiệm giải trình" },
+  { word: "cohesion", options: ["sự gắn kết", "sự linh hoạt", "sự đa dạng", "sự đối lập"], answer: "sự gắn kết" },
+  { word: "proposition", options: ["đề xuất", "bằng chứng", "mệnh đề", "giả thuyết"], answer: "đề xuất" },
+  { word: "speculation", options: ["sự suy đoán", "sự kiểm chứng", "sự bảo đảm", "sự xác thực"], answer: "sự suy đoán" },
+  { word: "contradiction", options: ["sự mâu thuẫn", "sự xác nhận", "sự đồng thuận", "sự thống nhất"], answer: "sự mâu thuẫn" },
+  { word: "hierarchy", options: ["hệ thống cấp bậc", "sự bình đẳng", "sự độc lập", "sự hỗn loạn"], answer: "hệ thống cấp bậc" },
+  { word: "ambiguity", options: ["sự mơ hồ", "sự rõ ràng", "sự hợp lý", "sự mạch lạc"], answer: "sự mơ hồ" },
+  { word: "incentive", options: ["sự khuyến khích", "sự phản đối", "sự phân tích", "sự kiểm soát"], answer: "sự khuyến khích" },
+  { word: "compensation", options: ["sự bồi thường", "sự đầu tư", "sự phát triển", "sự kiểm tra"], answer: "sự bồi thường" },
+  { word: "fluctuation", options: ["sự dao động", "sự ổn định", "sự bảo đảm", "sự tiến bộ"], answer: "sự dao động" },
+  { word: "concession", options: ["sự nhượng bộ", "sự phản đối", "sự hợp tác", "sự ngăn cản"], answer: "sự nhượng bộ" },
+  { word: "endeavour", options: ["nỗ lực", "thành công", "thói quen", "chiến lược"], answer: "nỗ lực" },
+  { word: "hypothesis", options: ["giả thuyết", "lý thuyết", "chứng minh", "định nghĩa"], answer: "giả thuyết" },
+  { word: "premise", options: ["tiền đề", "kết quả", "tài liệu", "sự kiện"], answer: "tiền đề" },
+  { word: "convergence", options: ["sự hội tụ", "sự phân tán", "sự biến mất", "sự lệch lạc"], answer: "sự hội tụ" },
+  { word: "divergence", options: ["sự khác biệt, sự phân kỳ", "sự kết hợp", "sự mạch lạc", "sự hội nhập"], answer: "sự khác biệt, sự phân kỳ" },
+  { word: "viability", options: ["tính khả thi", "tính minh bạch", "tính khách quan", "tính bền bỉ"], answer: "tính khả thi" },
+  { word: "subsidy", options: ["trợ cấp", "đầu tư", "chi phí", "thu nhập"], answer: "trợ cấp" },
+  { word: "burden", options: ["gánh nặng", "cơ hội", "sự dễ dàng", "sự giàu có"], answer: "gánh nặng" },
+  { word: "allocation", options: ["sự phân bổ", "sự đầu tư", "sự thu hồi", "sự tiết kiệm"], answer: "sự phân bổ" },
+  { word: "expenditure", options: ["chi tiêu", "thu nhập", "dự trữ", "nguồn vốn"], answer: "chi tiêu" },
+  { word: "retention", options: ["sự duy trì", "sự loại bỏ", "sự đổi mới", "sự thất thoát"], answer: "sự duy trì" },
+  { word: "contingency", options: ["tình huống bất ngờ", "tình huống phổ biến", "kế hoạch chính", "mục tiêu"], answer: "tình huống bất ngờ" }
 ];
 
 function timeSince(dateString) {
@@ -894,4 +944,5 @@ function LoadingScreen() {
     </div>
   );
 }
+
 

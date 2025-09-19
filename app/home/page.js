@@ -45,6 +45,58 @@ const dailyWords = [
   { word: "headquarters", options: ["trụ sở chính", "chi nhánh", "phòng họp", "nhà kho"], answer: "trụ sở chính" },
   { word: "inventory", options: ["hàng tồn kho", "doanh thu", "chi phí", "tài sản"], answer: "hàng tồn kho" },
   { word: "liaison", options: ["người liên lạc", "đối thủ", "chứng từ", "nhà cung cấp"], answer: "người liên lạc" },
+  //Update word lần 2 09/19/2025
+  { word: "advocate", options: ["người ủng hộ", "đối thủ", "quan chức", "kẻ phản bội"], answer: "người ủng hộ" },
+  { word: "allegation", options: ["cáo buộc", "bằng chứng", "chiến lược", "giải pháp"], answer: "cáo buộc" },
+  { word: "ambiguous", options: ["mơ hồ", "rõ ràng", "chính xác", "tuyệt đối"], answer: "mơ hồ" },
+  { word: "amendment", options: ["sự sửa đổi", "sự phá hủy", "sự bảo tồn", "sự thay thế"], answer: "sự sửa đổi" },
+  { word: "analogy", options: ["sự tương tự", "sự khác biệt", "sự đối lập", "sự hỗn loạn"], answer: "sự tương tự" },
+  { word: "anecdote", options: ["giai thoại", "tiểu thuyết", "bài diễn văn", "hồ sơ"], answer: "giai thoại" },
+  { word: "applicable", options: ["có thể áp dụng", "không liên quan", "không hợp lệ", "bất khả thi"], answer: "có thể áp dụng" },
+  { word: "arbitrary", options: ["tùy tiện", "hợp lý", "công bằng", "logic"], answer: "tùy tiện" },
+  { word: "aspiration", options: ["khát vọng", "nỗi sợ", "sự thất bại", "sự miễn cưỡng"], answer: "khát vọng" },
+  { word: "attain", options: ["đạt được", "từ bỏ", "tránh né", "làm hỏng"], answer: "đạt được" },
+  { word: "attribute", options: ["thuộc tính", "sự việc", "vật chất", "tài nguyên"], answer: "thuộc tính" },
+  { word: "authentic", options: ["xác thực", "giả mạo", "sai lầm", "thất bại"], answer: "xác thực" },
+  { word: "autonomy", options: ["quyền tự trị", "nô lệ", "phụ thuộc", "thống trị"], answer: "quyền tự trị" },
+  { word: "benchmark", options: ["chuẩn mực", "khuyết điểm", "sai lầm", "mục tiêu sai"], answer: "chuẩn mực" },
+  { word: "bias", options: ["định kiến", "sự công bằng", "sự thật", "chân lý"], answer: "định kiến" },
+  { word: "blatant", options: ["rõ ràng (mang tính xấu)", "kín đáo", "ẩn giấu", "bí mật"], answer: "rõ ràng (mang tính xấu)" },
+  { word: "coherent", options: ["mạch lạc", "rời rạc", "mơ hồ", "hỗn loạn"], answer: "mạch lạc" },
+  { word: "coincide", options: ["trùng hợp", "khác biệt", "đối lập", "chia rẽ"], answer: "trùng hợp" },
+  { word: "commence", options: ["bắt đầu", "kết thúc", "tạm dừng", "gián đoạn"], answer: "bắt đầu" },
+  { word: "compatible", options: ["tương thích", "mâu thuẫn", "xung đột", "trái ngược"], answer: "tương thích" },
+  { word: "compensate", options: ["bồi thường", "tước đoạt", "trốn tránh", "làm hại"], answer: "bồi thường" },
+  { word: "complement", options: ["bổ sung", "loại bỏ", "phá hủy", "tách biệt"], answer: "bổ sung" },
+  { word: "compliance", options: ["sự tuân thủ", "sự nổi loạn", "sự chống đối", "sự bất đồng"], answer: "sự tuân thủ" },
+  { word: "comprise", options: ["bao gồm", "loại trừ", "chấm dứt", "giảm bớt"], answer: "bao gồm" },
+  { word: "conceive", options: ["hình dung, tưởng tượng", "quên đi", "giấu giếm", "bỏ qua"], answer: "hình dung, tưởng tượng" },
+  { word: "confer", options: ["trao tặng, bàn bạc", "từ chối", "che giấu", "giữ lại"], answer: "trao tặng, bàn bạc" },
+  { word: "contemplate", options: ["suy ngẫm", "phớt lờ", "từ chối", "quên lãng"], answer: "suy ngẫm" },
+  { word: "contradict", options: ["mâu thuẫn", "ủng hộ", "xác nhận", "khẳng định"], answer: "mâu thuẫn" },
+  { word: "conversely", options: ["ngược lại", "tương tự", "giống nhau", "song song"], answer: "ngược lại" },
+  { word: "credibility", options: ["sự đáng tin cậy", "sự giả dối", "sự phản bội", "sự sai lầm"], answer: "sự đáng tin cậy" },
+  { word: "crucially", options: ["một cách quan trọng", "không quan trọng", "ngẫu nhiên", "phụ"], answer: "một cách quan trọng" },
+  { word: "cumulative", options: ["tích lũy", "giảm sút", "mất mát", "bỏ đi"], answer: "tích lũy" },
+  { word: "dedicate", options: ["cống hiến", "phớt lờ", "bỏ cuộc", "phản bội"], answer: "cống hiến" },
+  { word: "depict", options: ["miêu tả", "xóa bỏ", "làm mờ", "giấu đi"], answer: "miêu tả" },
+  { word: "detain", options: ["giam giữ", "thả ra", "tự do", "giải phóng"], answer: "giam giữ" },
+  { word: "diminish", options: ["giảm bớt", "tăng thêm", "mở rộng", "phát triển"], answer: "giảm bớt" },
+  { word: "discretion", options: ["sự thận trọng", "sự bất cẩn", "sự ngu ngốc", "sự liều lĩnh"], answer: "sự thận trọng" },
+  { word: "disseminate", options: ["phổ biến", "che giấu", "từ chối", "xóa bỏ"], answer: "phổ biến" },
+  { word: "distort", options: ["bóp méo", "làm rõ", "xác minh", "khẳng định"], answer: "bóp méo" },
+  { word: "eligible", options: ["đủ điều kiện", "không phù hợp", "bị cấm", "trái phép"], answer: "đủ điều kiện" },
+  { word: "embark", options: ["bắt đầu (hành trình)", "kết thúc", "bỏ qua", "ngừng lại"], answer: "bắt đầu (hành trình)" },
+  { word: "enforce", options: ["thi hành", "phớt lờ", "từ bỏ", "giấu đi"], answer: "thi hành" },
+  { word: "enquire", options: ["hỏi thăm, điều tra", "che giấu", "phớt lờ", "từ bỏ"], answer: "hỏi thăm, điều tra" },
+  { word: "entail", options: ["đòi hỏi, kéo theo", "loại bỏ", "từ chối", "giải thoát"], answer: "đòi hỏi, kéo theo" },
+  { word: "equivalent", options: ["tương đương", "khác biệt", "đối lập", "ngược lại"], answer: "tương đương" },
+  { word: "erroneous", options: ["sai lầm", "chính xác", "chuẩn xác", "đúng đắn"], answer: "sai lầm" },
+  { word: "exceed", options: ["vượt quá", "giảm bớt", "thua kém", "tụt lại"], answer: "vượt quá" },
+  { word: "feasible", options: ["khả thi", "bất khả thi", "hư cấu", "mơ hồ"], answer: "khả thi" },
+  { word: "fluctuate", options: ["dao động", "ổn định", "cố định", "giữ nguyên"], answer: "dao động" },
+  { word: "formulate", options: ["xây dựng (kế hoạch)", "hủy bỏ", "phá hoại", "giấu đi"], answer: "xây dựng (kế hoạch)" },
+  { word: "framework", options: ["khung (cấu trúc)", "nội dung", "chất liệu", "chi tiết"], answer: "khung (cấu trúc)" }
 ];
 
 function timeSince(dateString) {
@@ -274,13 +326,27 @@ export default function FeedPage() {
   }, [user?.id]);
 
   // ===== QUIZ: random 1 từ mỗi lần popup mở =====
+  //--Hàm Random QUIZ
+  const shuffleArray = (array) => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+    //--QUIZ
   useEffect(() => {
-    if (showPopup && dailyWords.length > 0) {
-      const randomIndex = Math.floor(Math.random() * dailyWords.length);
-      setCurrentWord(dailyWords[randomIndex]);
-      setSelectedAnswer(null);
-    }
-  }, [showPopup]);
+  if (showPopup && dailyWords.length > 0) {
+    const randomIndex = Math.floor(Math.random() * dailyWords.length);
+    const wordObj = dailyWords[randomIndex];
+
+    // Tạo mảng option đã shuffle
+    const shuffledOptions = shuffleArray(wordObj.options);
+
+    // Lưu cả từ + options đã shuffle
+    setCurrentWord({
+      ...wordObj,
+      options: shuffledOptions
+    });
+    setSelectedAnswer(null);
+  }
+}, [showPopup]);
 
   const handleAnswer = async (choice) => {
     if (selectedAnswer) return;
@@ -828,3 +894,4 @@ function LoadingScreen() {
     </div>
   );
 }
+

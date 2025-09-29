@@ -1,0 +1,61 @@
+"use client";
+
+import { useState } from "react";
+import ConfessionFeed from "./ConfessionFeed";
+import MarketFeed from "./MarketFeed";
+import { MessageSquare, ShoppingBag } from "lucide-react"; // icon cho Confession và Market
+
+export default function FeedTabs({ user, profile }) {
+  const [activeTab, setActiveTab] = useState("confession");
+
+  const tabs = [
+    { key: "confession", label: "Confession", icon: MessageSquare },
+    { key: "market", label: "Market", icon: ShoppingBag },
+  ];
+
+  return (
+    <div style={{ width: "100%", maxWidth: "750px", margin: "0 auto", padding: "0px" }}>
+      {/* ===== TAB SELECTOR ===== */}
+      <div style={{ display: "flex", gap: "12px", marginBottom: "20px" }}>
+        {tabs.map((tab) => {
+          const isActive = activeTab === tab.key;
+          const Icon = tab.icon;
+          return (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              style={{
+                flex: 1,
+                padding: "10px 0",
+                borderRadius: "30px",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: "500",
+                fontSize: "1em",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                background: isActive
+                  ? "linear-gradient(90deg, #1e90ff, #00bfff)"
+                  : "#f1f2f6",
+                color: isActive ? "#fff" : "#555",
+                boxShadow: isActive ? "0 4px 12px rgba(30,144,255,0.3)" : "none",
+                transition: "0.2s",
+              }}
+            >
+              <Icon size={18} />
+              <span>{tab.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* ===== TAB CONTENT ===== */}
+      <div>
+        {activeTab === "confession" && <ConfessionFeed user={user} profile={profile} />}
+        {activeTab === "market" && <MarketFeed />}
+      </div>
+    </div>
+  );
+}

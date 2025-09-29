@@ -29,6 +29,8 @@ export default function TransactionHistoryPage({ currentUser }) {
       query = query.eq("sender_id", currentUser.id);
     } else if (filter === "received") {
       query = query.eq("receiver_id", currentUser.id);
+    } else {
+      query = query.or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`);
     }
 
     const { data, error } = await query;
@@ -219,3 +221,4 @@ export default function TransactionHistoryPage({ currentUser }) {
     </div>
   );
 }
+

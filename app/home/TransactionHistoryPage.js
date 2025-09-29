@@ -11,30 +11,35 @@ export default function TransactionHistoryPage({ currentUser }) {
   const [selectedTx, setSelectedTx] = useState(null);
 
   const fetchHistory = async () => {
+    if (!currentUser?.id) return;
+
     let query = supabase
       .from("transaction_history")
-    .select(`
-    id,
-    amount,
-    created_at,
-    sender:sender_id(id, full_name, avatar_url),
-    receiver:receiver_id(id, full_name, avatar_url)
-    `)
+      .select(`
+        id,
+        amount,
+        created_at,
+        sender:sender_id(id, full_name, avatar_url),
+        receiver:receiver_id(id, full_name, avatar_url)
+      `)
+      .or(`sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`) // chỉ lấy giao dịch liên quan
       .order("created_at", { ascending: false });
 
-    if (filter === "sent") query = query.eq("sender_id", currentUser.id);
-    else if (filter === "received") query = query.eq("receiver_id", currentUser.id);
+    if (filter === "sent") {
+      query = query.eq("sender_id", currentUser.id);
+    } else if (filter === "received") {
+      query = query.eq("receiver_id", currentUser.id);
+    }
 
     const { data, error } = await query;
     if (!error && data) setHistory(data);
   };
 
   useEffect(() => {
-    if (!currentUser?.id) return;
     fetchHistory();
-  }, [currentUser.id, filter]);
+  }, [currentUser?.id, filter]);
 
-  const renderAvatar = (user) => (
+  const renderAvatar = (user) =>
     user?.avatar_url ? (
       <img
         src={user.avatar_url}
@@ -45,25 +50,26 @@ export default function TransactionHistoryPage({ currentUser }) {
       <div className="w-12 h-12 rounded-full border bg-gray-200 flex items-center justify-center text-gray-500 font-bold">
         {user?.full_name?.[0] || "?"}
       </div>
-    )
-  );
+    );
 
-  const formatTime = (timestamp) => {
-    if (!timestamp) return "";
-    return new Date(timestamp).toLocaleString("en-US", {
-      hour12: false,
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
-  };
+  const formatTime = (timestamp) =>
+    timestamp
+      ? new Date(timestamp).toLocaleString("en-US", {
+          hour12: false,
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        })
+      : "";
 
   return (
     <div className="bg-gray-50 p-4 rounded-lg h-full flex flex-col shadow-lg relative">
-      <h2 className="text-2xl font-bold mb-4 border-b pb-2">📜 Transaction History</h2>
+      <h2 className="text-2xl font-bold mb-4 border-b pb-2">
+        📜 Transaction History
+      </h2>
 
       {/* Filter buttons */}
       <div className="flex gap-2 mb-4">
@@ -96,7 +102,7 @@ export default function TransactionHistoryPage({ currentUser }) {
           <div className="grid gap-3">
             {history.map((tx) => {
               const isSent = tx.sender?.id === currentUser.id;
-              const otherUser = isSent ? tx.receiver : tx.sender; // hiển thị avatar đối phương
+              const otherUser = isSent ? tx.receiver : tx.sender;
 
               return (
                 <motion.div
@@ -111,7 +117,9 @@ export default function TransactionHistoryPage({ currentUser }) {
                       <p className="font-semibold text-gray-800 text-lg">
                         {otherUser?.full_name || "Unknown"}
                       </p>
-                      <p className="text-gray-500 text-sm">{formatTime(tx.created_at)}</p>
+                      <p className="text-gray-500 text-sm">
+                        {formatTime(tx.created_at)}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-1">
@@ -120,7 +128,11 @@ export default function TransactionHistoryPage({ currentUser }) {
                     ) : (
                       <ArrowDownRight className="text-green-500" size={18} />
                     )}
-                    <p className={`font-bold text-lg ${isSent ? "text-red-500" : "text-green-600"}`}>
+                    <p
+                      className={`font-bold text-lg ${
+                        isSent ? "text-red-500" : "text-green-600"
+                      }`}
+                    >
                       {Number(tx.amount).toLocaleString()} 💰
                     </p>
                   </div>
@@ -163,19 +175,30 @@ export default function TransactionHistoryPage({ currentUser }) {
               <div className="flex items-center justify-center gap-6 mb-4">
                 <div className="flex flex-col items-center">
                   {renderAvatar(selectedTx.sender)}
-                  <p className="mt-2 font-semibold">{selectedTx.sender?.full_name || "Unknown"}</p>
+                  <p className="mt-2 font-semibold">
+                    {selectedTx.sender?.full_name || "Unknown"}
+                  </p>
                   <p className="text-gray-400 text-sm">Sender</p>
                 </div>
                 <div className="text-2xl font-bold">➡️</div>
                 <div className="flex flex-col items-center">
                   {renderAvatar(selectedTx.receiver)}
-                  <p className="mt-2 font-semibold">{selectedTx.receiver?.full_name || "Unknown"}</p>
+                  <p className="mt-2 font-semibold">
+                    {selectedTx.receiver?.full_name || "Unknown"}
+                  </p>
                   <p className="text-gray-400 text-sm">Receiver</p>
                 </div>
               </div>
 
               <p className="text-gray-700 text-lg mb-1">
-                Amount: <span className={`font-semibold ${selectedTx.sender?.id === currentUser.id ? "text-red-500" : "text-green-600"}`}>
+                Amount:{" "}
+                <span
+                  className={`font-semibold ${
+                    selectedTx.sender?.id === currentUser.id
+                      ? "text-red-500"
+                      : "text-green-600"
+                  }`}
+                >
                   {Number(selectedTx.amount).toLocaleString()} coins
                 </span>
               </p>

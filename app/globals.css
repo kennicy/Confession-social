@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* =========================
+   Biến màu global
+========================= */
+:root {
+  --background: #0a0a0a;        /* Nền chính */
+  --foreground: #ededed;        /* Chữ sáng */
+  --primary: #1e90ff;           /* Nút chính / gradient start */
+  --primary-dark: #0056b3;      /* Gradient end */
+  --secondary: #28a745;         /* Xanh cho past event / tuần đã qua */
+  --accent: #fd7e14;            /* Cam cho current week */
+  --border: #333;               /* Border tối */
+  --input-bg: #111;             /* Input/textarea background */
+  --input-border: #444;         /* Input border */
+  --shadow: rgba(0,0,0,0.6);    /* Shadow tối */
+  --hover-bg: #1a1a1a;          /* Hover background */
+  --scrollbar-bg: #1a1a1a;
+  --scrollbar-thumb: #444;
+}
+
+/* =========================
+   Body & Text
+========================= */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* =========================
+   Links
+========================= */
+a {
+  color: var(--primary);
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* =========================
+   Buttons
+========================= */
+button {
+  background-color: var(--primary);
+  color: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* =========================
+   Inputs & Textarea
+========================= */
+input, textarea, select {
+  background-color: var(--input-bg);
+  color: var(--foreground);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+}
+
+/* =========================
+   Scrollbar Dark
+========================= */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* =========================
+   Cards / Containers
+========================= */
+.card, .container {
+  background-color: #111;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+/* =========================
+   Tables
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #111;
+  color: var(--foreground);
+}
+th, td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+}
+th {
+  background-color: #1a1a1a;
+}
+
+/* =========================
+   FullCalendar Dark Mode
+========================= */
+.fc {
+  background-color: #111 !important;
+  color: var(--foreground) !important;
+  border-color: var(--border);
+}
+.fc .fc-toolbar.fc-header-toolbar {
+  background-color: #111;
+  color: var(--foreground);
+}
+.fc .fc-button {
+  background-color: #1a1a1a;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+.fc .fc-button:hover {
+  background-color: #222;
+}
+.fc .fc-timegrid-slot,
+.fc .fc-daygrid-day,
+.fc .fc-daygrid-day-top {
+  border-color: var(--border) !important;
+  background-color: #111 !important;
+}
+.fc .fc-day-today {
+  background-color: #1a1a1a !important;
+}
+.fc .fc-event {
+  color: #fff !important;
+  border-color: #444 !important;
+}
+.fc .fc-timegrid-axis-cushion,
+.fc .fc-col-header-cell-cushion {
+  color: #e5e7eb !important;
+}
+
+/* =========================
+   Progress Bar / Week Bar
+========================= */
+.progress-bar {
+  background-color: #111;
+  border-radius: 6px;
+}
+.progress-bar div {
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+/* =========================
+   Popup / Modal
+========================= */
+.popup {
+  background: #1e1e1e;
+  color: #ededed;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 18px 28px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* =========================
+   Misc Hover / Active
+========================= */
+.hover-dark:hover {
+  background-color: var(--hover-bg) !important;
+}
+.active-dark {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+}
